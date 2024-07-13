@@ -1,0 +1,138 @@
+﻿@charset "utf-8";
+
+:root {
+    --theme-c-dark: rgb(50, 50, 50);
+    --theme-c-light: #FAFAFA;
+    --theme-time: 0.25s;
+}
+
+*,
+*::before,
+*::after {
+    font-family: Arial, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--theme-c-light);
+    transition: var(--theme-time);
+}
+
+[data-theme=dark] body {
+    background-color: var(--theme-c-dark);
+}
+
+header {
+    min-height: 75vh;
+    background-color: transparent;
+    background-image: url("Images/AdobeStock_318233593.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: var(--theme-time);
+    padding: 1rem;
+}
+
+[data-theme=dark] header {
+    background-color: transparent;
+    background-image: url("Images/AdobeStock_318233593_invert.jpg");
+    color: var(--theme-c-light);
+}
+
+main {
+    padding: 1rem;
+    min-height: 50vh;
+}
+
+[data-theme=dark] main {
+    color: var(--theme-c-light);
+}
+
+.bo-nav-container {
+    background-color: rgb(0, 0, 0, 10%);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.bo-theme-switch-slider {
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    display: block;
+    padding: 0.5rem;
+    transform: translateX(0);
+    transition: var(--theme-time);
+    border-radius: 1rem;
+    text-align: center;
+    vertical-align: central;
+}
+
+.bo-theme-switch {
+    background-color: lightgrey;
+    border: 1px solid darkgrey;
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: var(--theme-time);
+    min-width: 75px;
+    min-height: 25px;
+}
+
+    .bo-theme-switch input {
+        display: none;
+    }
+
+    .bo-theme-switch:has(input:checked) {
+        background-color: var(--theme-c-dark);
+    }
+
+        .bo-theme-switch:has(input:checked) .bo-theme-switch-slider {
+            transform: translateX(100%);
+            background-color: darkgrey;
+        }
+
+        .bo-theme-switch:has(input:checked) .bi-sun {
+            display: none;
+        }
+
+    .bo-theme-switch:has(input:not(:checked)) .bi-moon {
+        display: none;
+    }
+
+.bo-nav-btn {
+    background-color: transparent;
+    padding: 1rem;
+    border: none;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--theme-c-dark);
+    transition: 0.2s;
+}
+
+    .bo-nav-btn:hover {
+        color: black;
+    }
+
+[data-theme=dark] .bo-nav-btn {
+    color: var(--theme-c-light);
+    transition: 0.2s;
+}
+
+    [data-theme=dark] .bo-nav-btn:hover {
+        color: white;
+    }
