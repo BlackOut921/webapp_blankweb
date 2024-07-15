@@ -1,9 +1,19 @@
 ﻿@charset "utf-8";
 
-:root {
+:root, [data-theme=light] {
     --theme-c-dark: rgb(50, 50, 50);
     --theme-c-light: #FAFAFA;
     --theme-time: 0.25s;
+}
+
+[data-theme=dark] {
+    --theme-c-body: rgb(50, 50, 50);
+    --theme-c-dark: rgb(50, 50, 50);
+    --theme-c-light: #FAFAFA;
+}
+
+@media (prefers-color-scheme: dark) {
+
 }
 
 *,
@@ -19,12 +29,8 @@
 }
 
 body {
-    background-color: var(--theme-c-light);
+    background-color: var(--theme-c-body);
     transition: var(--theme-time);
-}
-
-[data-theme=dark] body {
-    background-color: var(--theme-c-dark);
 }
 
 header {
@@ -42,7 +48,6 @@ header {
 [data-theme=dark] header {
     background-color: transparent;
     background-image: url("Images/AdobeStock_318233593_invert.jpg");
-    color: var(--theme-c-light);
 }
 
 main {
@@ -66,6 +71,11 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
+    transition: var(--theme-time);
+}
+
+[data-theme=dark] .bo-nav-container {
+    background-color: rgb(0, 0, 0, 50%);
 }
 
 .bo-theme-switch-slider {

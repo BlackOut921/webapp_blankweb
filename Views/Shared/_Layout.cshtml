@@ -11,7 +11,7 @@
 </head>
 <body>
 	@await Html.PartialAsync("_PartialNav")
-	<header>Header</header>
+	<header>@RenderSection("CustomHeader", false)</header>
 	<main>@RenderBody()</main>
 	<script src="~/JavaScript.js" async></script>
 </body>
