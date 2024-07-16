@@ -1,19 +1,23 @@
 ﻿@charset "utf-8";
 
-:root, [data-theme=light] {
-    --theme-c-dark: rgb(50, 50, 50);
-    --theme-c-light: #FAFAFA;
+/* Bootstrap breakpoints */
+/* xs = 0; sm = 576px; md = 768px; lg = 992px; xl = 1200px; xxl = 1400px; */
+
+:root,
+[data-theme=light] {
+    /* root */
     --theme-time: 0.25s;
+    --txt-dark: #252525; /*rgb(50, 50, 50)*/
+    --txt-light: #FAFAFA;
+    --c-highlight: cornflowerblue;
+    /* theme */
+    --c-body: #FAFAFA;
+    --txt-body: #252525; /*rgb(50, 50, 50)*/
 }
 
 [data-theme=dark] {
-    --theme-c-body: rgb(50, 50, 50);
-    --theme-c-dark: rgb(50, 50, 50);
-    --theme-c-light: #FAFAFA;
-}
-
-@media (prefers-color-scheme: dark) {
-
+    --c-body: #252525; /*rgb(50, 50, 50)*/
+    --txt-body: #FAFAFA;
 }
 
 *,
@@ -29,8 +33,10 @@
 }
 
 body {
-    background-color: var(--theme-c-body);
+    background-color: var(--c-body);
     transition: var(--theme-time);
+    color: var(--txt-body);
+    height: 100%;
 }
 
 header {
@@ -42,25 +48,25 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     transition: var(--theme-time);
-    padding: 1rem;
+    display: flex;
+    align-items: stretch;
 }
 
 [data-theme=dark] header {
-    background-color: transparent;
     background-image: url("Images/AdobeStock_318233593_invert.jpg");
 }
 
 main {
     padding: 1rem;
-    min-height: 50vh;
+    min-height: 100vh;
 }
 
 [data-theme=dark] main {
-    color: var(--theme-c-light);
+    color: var(--c-light);
 }
 
 .bo-nav-container {
-    background-color: rgb(0, 0, 0, 10%);
+    background-color: transparent;
     backdrop-filter: blur(5px);
     width: 100%;
     position: sticky;
@@ -72,6 +78,7 @@ main {
     align-items: center;
     padding: 0.5rem;
     transition: var(--theme-time);
+    color: var(--txt-body);
 }
 
 [data-theme=dark] .bo-nav-container {
@@ -130,19 +137,102 @@ main {
     font-weight: bolder;
     font-size: 1.2rem;
     cursor: pointer;
-    color: var(--theme-c-dark);
+    color: var(--txt-body);
     transition: 0.2s;
 }
 
     .bo-nav-btn:hover {
-        color: black;
+        color: var(--c-highlight);
     }
 
-[data-theme=dark] .bo-nav-btn {
-    color: var(--theme-c-light);
-    transition: 0.2s;
+/* ----- Observer anims ----- */
+.bo-observer-anim-slide-down {
+    position: relative;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: 1s;
 }
 
-    [data-theme=dark] .bo-nav-btn:hover {
-        color: white;
+    .bo-observer-anim-slide-down.show {
+        transform: translateY(0);
+        opacity: 1;
     }
+
+.bo-observer-anim-slide-up {
+    position: relative;
+    transform: translateY(200%);
+    opacity: 0;
+    transition: 1s;
+}
+
+    .bo-observer-anim-slide-up.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+.bo-observer-anim-fade-in {
+    opacity: 0;
+    transition: 1s;
+}
+
+    .bo-observer-anim-fade-in.show {
+        opacity: 1;
+    }
+/* ----- Containers ----- */
+.bo-container,
+.bo-container-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* sm breakpoint */
+@media screen and (width >= 576px) {
+    .bo-container {
+        width: calc(100vw - 20%);
+    }
+}
+
+/* md breakpoint */
+@media screen and (width >= 768px) {
+    .bo-container {
+        width: calc(100vw - 25%);
+    }
+}
+
+/* lg breakpoint */
+@media screen and (width >= 992px) {
+    .bo-container {
+        width: calc(100vw - 30%);
+    }
+}
+
+/* xl breakpoint */
+@media screen and (width >= 1200px) {
+    .bo-container {
+        width: calc(100vw - 35%);
+    }
+}
+
+/* xxl breakpoint */
+@media screen and (width >= 1400px) {
+    .bo-container {
+        width: calc(100vw - 40%);
+    }
+}
+
+/* ----- Display ----- */
+.bo-d-block { display: block; }
+.bo-d-flex { display: flex; }
+.bo-flex-column { flex-direction: column; }
+.bo-justify-content-around { justify-content: space-around; }
+
+/* ----- Text ----- */
+.bo-text-dark { color: var(--txt-dark); }
+.bo-text-center { text-align: center; }
+
+/* ----- Margin ----- */
+.bo-mx-auto { margin-left: auto; margin-right: auto; }
+
+/* ----- ?? ----- */
+.bo-w-50 { width: 50%; }

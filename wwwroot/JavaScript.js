@@ -37,12 +37,20 @@ window.onload = () => {
         _theme = _theme === "light" ? "dark" : "light";
         SetThemePreference(_theme);
     });
-};
 
-/*window.addEventListener("load", () => {
-    _themeSwitch.addEventListener("change", () => {
-        let _theme = _themeSwitch.checked ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", _theme);
-        localStorage.setItem("bo-theme", _theme);
+    const _observer = new IntersectionObserver(entries => {
+        entries.forEach(i => {
+            if (i.isIntersecting) {
+                i.target.classList.add("show");
+            }
+            else {
+                i.target.classList.remove("show");
+            }
+        });
     });
-});*/
+
+    const _observerTargets = document.querySelectorAll(".bo-observer-target");
+    if (_observerTargets.length) {
+        _observerTargets.forEach(i => { _observer.observe(i); });
+    }
+};
