@@ -43,9 +43,9 @@ window.onload = () => {
             if (i.isIntersecting) {
                 i.target.classList.add("show");
             }
-            else {
+            /*else {
                 i.target.classList.remove("show");
-            }
+            }*/
         });
     });
 
@@ -53,4 +53,18 @@ window.onload = () => {
     if (_observerTargets.length) {
         _observerTargets.forEach(i => { _observer.observe(i); });
     }
+
+    //Navbar
+    const _navbar = document.querySelector(".bo-nav");
+    const _navbarBtn = document.querySelector(".bo-nav-btn");
+    //Menu btn
+    _navbarBtn.addEventListener("click", () => {
+        _navbar.classList.toggle("show");
+    });
+    //Nav active click
+    _navbar.addEventListener("click", (e) => {
+        if (e.target == _navbar) {
+            _navbar.classList.remove("show");
+        }
+    });
 };
