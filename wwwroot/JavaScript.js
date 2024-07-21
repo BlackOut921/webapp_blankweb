@@ -43,9 +43,9 @@ window.onload = () => {
             if (i.isIntersecting) {
                 i.target.classList.add("show");
             }
-            /*else {
+            else {
                 i.target.classList.remove("show");
-            }*/
+            }
         });
     });
 
