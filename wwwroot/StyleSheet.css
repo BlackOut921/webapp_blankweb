@@ -7,7 +7,7 @@
 :root {
     --root-theme-time: 0.5s;
     --root-btn-hover-time: 0.2s;
-    --root-c-dark: #100F11;
+    --root-c-dark: rgb(16, 15, 17); /*#100F11*/
     --root-c-light: #FAFAFA;
 }
 
@@ -16,7 +16,7 @@
     --c-body-2: rgb(236, 236, 236); /*darker white*/
     --c-highlight-1: rgb(96, 180, 120); /*#60B478*/
     --c-highlight-2: rgb(154, 124, 248); /*#9A7CF8*/
-    --txt-body: rgb(50, 50, 50); /* dark-text */
+    --txt-body: var(--root-c-dark); /* dark-text */
     --img-geo: url("Images/AdobeStock_302972732.jpeg");
 }
 
@@ -25,7 +25,7 @@
     --c-body-2: rgb(48, 46, 53); /*#302E35*/
     --c-highlight-1: rgb(96, 180, 120); /*#60B478*/
     --c-highlight-2: rgb(154, 124, 248); /*#9A7CF8*/
-    --txt-body: #FAFAFA; /* light-text */
+    --txt-body: var(--root-c-light); /* light-text */
     --img-geo: url("Images/AdobeStock_302972732_invert.jpg");
 }
 
@@ -194,34 +194,7 @@ main {
         display: none;
     }
 
-/* ----- banner ----- */
-.bo-banner {
-    margin-top: -4rem;
-}
-
-    .bo-banner:before {
-        content: "";
-        display: block;
-        padding: 2rem 0;
-        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><polygon points='100,0 100,100 0,100' style='fill: cornflowerblue;' /></svg>");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-
-    .bo-banner:after {
-        content: "";
-        display: block;
-        padding: 2rem 0;
-        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><polygon points='0,0 100,0 0,100' style='fill: cornflowerblue;' /></svg>");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-
-.bo-banner-inner {
-    background-color: cornflowerblue; /* for debugging */
-    padding: 1rem;
-}
-
+/* global button */
 .bo-btn {
     border: none;
     border-radius: 0.5rem;
