@@ -44,7 +44,7 @@ window.onload = () => {
                 i.target.classList.add("show");
             }
             else {
-                i.target.classList.remove("show");
+                //i.target.classList.remove("show");
             }
         });
     });
