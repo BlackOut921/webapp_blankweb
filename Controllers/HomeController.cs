@@ -8,5 +8,11 @@ namespace webapp_blankweb.Controllers
 	{
 		[HttpGet]
 		public IActionResult Index() => View();
+
+		[HttpGet]
+		public IActionResult About() => View();
+
+		[HttpGet]
+		public IActionResult Contact() => View();
 	}
 }

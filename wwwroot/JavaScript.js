@@ -40,19 +40,15 @@ window.onload = () => {
 
     const _observer = new IntersectionObserver(entries => {
         entries.forEach(i => {
-            if (i.isIntersecting) {
-                i.target.classList.add("show");
-            }
-            else {
-                //i.target.classList.remove("show");
-            }
+            //Only shows i.target
+            //i.isIntersecting && i.target.classList.add("show");
+            //Hides and shows i.target
+            i.isIntersecting ? i.target.classList.add("show") : i.target.classList.remove("show");
         });
     });
 
     const _observerTargets = document.querySelectorAll(".bo-observer-target");
-    if (_observerTargets.length) {
-        _observerTargets.forEach(i => { _observer.observe(i); });
-    }
+    _observerTargets.length > 0 && _observerTargets.forEach(i => { _observer.observe(i); });
 
     //Navbar
     const _navbar = document.querySelector(".bo-nav");
@@ -60,11 +56,10 @@ window.onload = () => {
     //Menu btn
     _navbarBtn.addEventListener("click", () => {
         _navbar.classList.toggle("show");
+        document.body.classList.add("lock");
     });
     //Nav active click
     _navbar.addEventListener("click", (e) => {
-        if (e.target == _navbar) {
-            _navbar.classList.remove("show");
-        }
+        e.target == _navbar && _navbar.classList.remove("show");
     });
 };

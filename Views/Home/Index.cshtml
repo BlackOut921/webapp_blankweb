@@ -3,18 +3,21 @@
 }
 
 @section CustomHeader {
-	<div class="bo-w-100 bo-d-flex bo-flex-column bo-justify-content-around bo-text-center">
+	<div class="bo-bg-img-wave bo-vh-75 bo-text-center bo-flex-fill bo-d-flex bo-flex-column bo-justify-content-around">
 		<h1 class="bo-observer-target bo-observer-anim-slide-down">LOGO</h1>
 		<p class="bo-observer-target bo-observer-anim-fade-in">SLOGAN</p>
-		<a href="#about" class="bo-observer-target bo-observer-anim-slide-up bo-py-3 bo-bg-highlight-1 bo-text-light bo-btn bo-w-50 bo-mx-auto">About</a>
+		<div class="bo-observer-target bo-observer-anim-slide-up">
+			<a href="#about" class="bo-py-3 bo-text-light bo-btn bo-btn-highlight-1 bo-w-25 bo-mx-auto bo-d-block">About</a>
+		</div>
 	</div>
 }
 
-<div class="bo-container bo-p-3">
+<div class="bo-container bo-p-4 bo-bg-body-3 bo-border-bottom-2">
 	<h3>Pallette</h3>
 	<div class="bo-d-flex bo-justify-content-center">
-		<div class="bo-p-3 bo-bg-body">bo-bg-body</div>
+		<div class="bo-p-3 bo-bg-body-1">bo-bg-body-1</div>
 		<div class="bo-p-3 bo-bg-body-2">bo-bg-body-2</div>
+		<div class="bo-p-3 bo-bg-body-3">bo-bg-body-3</div>
 		<div class="bo-p-3 bo-bg-highlight-1">bo-bg-body-2</div>
 		<div class="bo-p-3 bo-bg-highlight-2">bo-bg-body-2</div>
 	</div>
@@ -23,22 +26,36 @@
 <div class="bo-container bo-p-3" id="about">
 	<h1>Index</h1>
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-		Neque volutpat ac tincidunt vitae semper quis lectus.
+		Lorem ipsum volutpat ac tincidunt vitae semper quis lectus.
 		Tellus id interdum velit laoreet id.
-		Neque convallis a cras semper auctor.
-		Et netus et malesuada fames ac turpis.
 	</p>
+	<p>Neque convallis a cras semper auctor.</p>
 	<p>
 		Justo laoreet sit amet cursus sit amet dictum sit.
 		Posuere sollicitudin aliquam ultrices sagittis orci.
 	</p>
-	<p>
-		Pellentesque id nibh tortor id aliquet.
-		Congue mauris rhoncus aenean vel elit.
-		Interdum velit laoreet id donec ultrices tincidunt arcu.
-		Lorem sed risus ultricies tristique nulla aliquet enim.
-		Massa enim nec dui nunc mattis.
-		Faucibus interdum posuere lorem ipsum dolor sit.
-	</p>
+	<p>Pellentesque id nibh tortor id aliquet.</p>
+</div>
+
+<div class="bo-container bo-d-flex bo-flex-column bo-flex-md-row bo-justify-content-around">
+	<div class="bo-tile bo-tile-fade bo-bg-highlight-1">
+		<div class="bo-text-center">
+			bo-tile-content
+		</div>
+		<div class="bo-tile-overlay bo-bg-highlight-2">
+			<div class="bo-w-100 bo-h-100 bo-d-flex bo-justify-content-center bo-align-items-center">
+				bo-tile-overlay
+			</div>
+		</div>
+	</div>
+	<div class="bo-tile bo-tile-slide-down bo-bg-highlight-1">
+		<div class="bo-text-center">
+			bo-tile-content
+		</div>
+		<div class="bo-tile-overlay bo-bg-highlight-2">
+			<div class="bo-w-100 bo-h-100 bo-d-flex bo-justify-content-center bo-align-items-center">
+				bo-tile-overlay
+			</div>
+		</div>
+	</div>
 </div>
