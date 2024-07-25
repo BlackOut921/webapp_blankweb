@@ -4,7 +4,7 @@
 /* Bootstrap breakpoints */
 /* xs = 0; sm = 576px; md = 768px; lg = 992px; xl = 1200px; xxl = 1400px; */
 
-/* globals */
+/* ----- globals ----- */
 :root {
     --root-theme-time: 0.5s;
     --root-btn-hover-time: 0.2s;
@@ -205,7 +205,6 @@ main {
 /* global button */
 .bo-btn {
     border: none;
-    border-radius: 0.5rem;
     text-align: center;
     text-decoration: none;
     vertical-align: central;
@@ -221,6 +220,10 @@ main {
     }
 
 /* ----- custom tiles ----- */
+.bo-tile-content {
+
+}
+
 .bo-tile-overlay {
     position: absolute;
     top: 0;
@@ -234,8 +237,20 @@ main {
     opacity: 0;
 }
 
+.bo-tile-slide-up .bo-tile-overlay {
+    transform: translateY(100%);
+}
+
 .bo-tile-slide-down .bo-tile-overlay {
     transform: translateY(-100%);
+}
+
+.bo-tile-slide-left .bo-tile-overlay {
+    transform: translateX(-100%);
+}
+
+.bo-tile-slide-right .bo-tile-overlay {
+    transform: translateX(100%);
 }
 
 .bo-tile {
@@ -248,10 +263,7 @@ main {
 
     .bo-tile:hover .bo-tile-overlay {
         opacity: 1;
-    }
-
-    .bo-tile:hover .bo-tile-overlay {
-        transform: translateY(0);
+        transform: translate(0);
     }
 
 /* ----- observer anims ----- */
@@ -325,6 +337,7 @@ main {
 /* ----- containers ----- */
 .bo-container,
 .bo-container-fluid {
+    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -332,37 +345,27 @@ main {
 
 /* sm breakpoint */
 @media screen and (width >= 576px) {
-    .bo-container {
-        width: calc(100vw - 20%);
-    }
+    .bo-container { width: 80%; }
 }
 
 /* md breakpoint */
 @media screen and (width >= 768px) {
-    .bo-container {
-        width: calc(100vw - 25%);
-    }
+    .bo-container { width: 75%; }
 }
 
 /* lg breakpoint */
 @media screen and (width >= 992px) {
-    .bo-container {
-        width: calc(100vw - 30%);
-    }
+    .bo-container { width: 70%; }
 }
 
 /* xl breakpoint */
 @media screen and (width >= 1200px) {
-    .bo-container {
-        width: calc(100vw - 35%);
-    }
+    .bo-container { width: calc(65%); }
 }
 
 /* xxl breakpoint */
 @media screen and (width >= 1400px) {
-    .bo-container {
-        width: calc(100vw - 40%);
-    }
+    .bo-container { width: 60%; }
 }
 
 /* ----- display ----- */
