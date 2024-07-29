@@ -1,5 +1,5 @@
 ﻿//Find theme wwitch
-const _themeSwitch = document.querySelector(".bo-theme-switch-input");
+const _themeSwitch = document.querySelector(".bo-theme-switch-input-new");
 //Save theme storage name
 const _themeStorageName = "bo-theme";
 //Store current theme
@@ -23,8 +23,13 @@ function SetThemePreference(s) {
 
 //Update UI with new theme
 function UpdateTheme() {
-    document.documentElement.setAttribute("data-theme", _theme);
-    _themeSwitch.checked = _theme === "dark" ? true : false;
+    try {
+        document.documentElement.setAttribute("data-theme", _theme);
+        _themeSwitch.checked = _theme === "dark" ? true : false;
+    }
+    catch (e) {
+
+    }
 }
 
 //Set theme early
@@ -32,34 +37,47 @@ _theme = GetThemePreference();
 UpdateTheme();
 
 window.onload = () => {
-    UpdateTheme();
-    _themeSwitch.addEventListener("change", () => {
-        _theme = _theme === "light" ? "dark" : "light";
-        SetThemePreference(_theme);
-    });
+    try {
+        UpdateTheme();
+        _themeSwitch.addEventListener("change", () => {
+            _theme = _theme === "light" ? "dark" : "light";
+            SetThemePreference(_theme);
+        });
+    }
+    catch (e) {
+
+    }
 
     const _observer = new IntersectionObserver(entries => {
         entries.forEach(i => {
             //Only shows i.target
-            //i.isIntersecting && i.target.classList.add("show");
+            i.isIntersecting && i.target.classList.add("show");
             //Hides and shows i.target
-            i.isIntersecting ? i.target.classList.add("show") : i.target.classList.remove("show");
+            //i.isIntersecting ? i.target.classList.add("show") : i.target.classList.remove("show");
         });
     });
 
     const _observerTargets = document.querySelectorAll(".bo-observer-target");
     _observerTargets.length > 0 && _observerTargets.forEach(i => { _observer.observe(i); });
 
-    //Navbar
+    //----- new navbar -----
+    //Links
+    const _navbar = document.querySelector(".bo-navbar-collapse-new");
+    //Navbar button
+    const _navbarBtn = document.querySelector(".bo-navbar-btn-new");
+    _navbarBtn.addEventListener("click", () => {
+        _navbar.classList.toggle("show");
+    });
+
+    /*//Navbar
     const _navbar = document.querySelector(".bo-nav");
     const _navbarBtn = document.querySelector(".bo-nav-btn");
     //Menu btn
     _navbarBtn.addEventListener("click", () => {
         _navbar.classList.toggle("show");
-        document.body.classList.add("lock");
     });
     //Nav active click
     _navbar.addEventListener("click", (e) => {
         e.target == _navbar && _navbar.classList.remove("show");
-    });
+    });*/
 };

@@ -68,6 +68,150 @@ main {
     min-height: 100vh;
 }
 
+footer {
+    min-height: 25vh;
+}
+
+/* ----- theme switch ----- */
+.bo-theme-switch-slider-new {
+    padding: 0.25rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--root-c-dark);
+    transform: translateX(0);
+    transition: 0.2s;
+}
+
+.bo-theme-switch-new {
+    padding: 0.25rem;
+    background-color: lightgrey;
+    border-radius: 0.5rem;
+    display: block;
+    width: 64px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    .bo-theme-switch-new:hover {
+        filter: brightness(95%);
+    }
+
+    .bo-theme-switch-new input {
+        display: none;
+    }
+
+    /* if input is :checked, change container background-color */
+    .bo-theme-switch-new:has(input:checked) {
+        background-color: dimgrey;
+    }
+
+        /* if input is :checked, select slider */
+        .bo-theme-switch-new:has(input:checked) .bo-theme-switch-slider-new {
+            transform: translateX(100%);
+            background-color: darkgrey;
+        }
+
+    /* if input checked, hide moon icon */
+    .bo-theme-switch-new:has(input:not(:checked)) .bi-moon {
+        display: none;
+    }
+
+    /* if input NOT checked, hide sun icon */
+    .bo-theme-switch-new:has(input:checked) .bi-sun {
+        display: none;
+    }
+
+/* ----- nav-new ----- */
+.bo-nav-header {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    padding: 1rem 0 0 1rem; /* top right bottom left*/
+}
+
+.bo-navbar-new {
+    display: block;
+}
+
+.bo-navbar-btn-new {
+    padding: 1rem 1.5rem;
+    height: 100%;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    color: var(--txt-body);
+    background-color: transparent;
+    display: none;
+    margin-left: auto;
+    transition: 0.2s;
+}
+
+    .bo-navbar-btn-new:hover {
+        color: var(--c-highlight-2);
+    }
+
+.bo-navbar-collapse-new {
+    overflow: hidden;
+    display: block;
+    height: 100%;
+}
+
+.bo-navbar-nav-new {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.bo-nav-link {
+    display: block;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    text-align: left;
+    color: var(--txt-body);
+    border-radius: 0.25rem;
+    transition: 0.2s;
+}
+
+    .bo-nav-link:hover {
+        color: var(--c-highlight-2);
+        background-color: var(--c-body-2);
+    }
+
+/* md breakpoint */
+@media screen and (width <= 768px) {
+    .bo-navbar-btn-new {
+        display: block;
+    }
+
+    .bo-navbar-collapse-new {
+        display: none;
+    }
+
+        .bo-navbar-collapse-new.show {
+            display: block;
+        }
+
+    .bo-navbar-nav-new {
+        flex-direction: column;
+    }
+}
+
 /* ----- navbar ----- */
 .bo-nav-container {
     backdrop-filter: blur(2px);
@@ -221,7 +365,6 @@ main {
 
 /* ----- custom tiles ----- */
 .bo-tile-content {
-
 }
 
 .bo-tile-overlay {
@@ -254,8 +397,6 @@ main {
 }
 
 .bo-tile {
-    max-width: 50%;
-    height: auto;
     aspect-ratio: 1/1;
     position: relative;
     overflow: hidden;
@@ -388,6 +529,8 @@ main {
 }
 
 /* ----- text ----- */
+.bo-text-start { text-align: left; }
+.bo-text-end { text-align: right; }
 .bo-text-center { text-align: center; }
 
 /* ----- colors ----- */
@@ -421,6 +564,11 @@ main {
 /* ----- margin and padding ----- */
 .bo-mx-auto { margin-left: auto; margin-right: auto; }
 .bo-my-auto { margin-top: auto; margin-bottom: auto; }
+.bo-my-1 { margin-top: var(--root-value-1); margin-bottom: var(--root-value-1); }
+.bo-my-2 { margin-top: var(--root-value-2); margin-bottom: var(--root-value-2); }
+.bo-my-3 { margin-top: var(--root-value-3); margin-bottom: var(--root-value-3); }
+.bo-my-4 { margin-top: var(--root-value-4); margin-bottom: var(--root-value-4); }
+.bo-my-5 { margin-top: var(--root-value-5); margin-bottom: var(--root-value-5); }
 .bo-mb-1 { margin-bottom: var(--root-value-1); }
 .bo-mb-2 { margin-bottom: var(--root-value-2); }
 .bo-mb-3 { margin-bottom: var(--root-value-3); }

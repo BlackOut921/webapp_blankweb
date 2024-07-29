@@ -14,7 +14,7 @@
 	@await Html.PartialAsync("_PartialNav")
 	<header>@RenderSection("CustomHeader", false)</header>
 	<main>@RenderBody()</main>
-	<footer>@await Html.PartialAsync("_PartialFooter")</footer>
+	<footer class="bo-bg-body-2">@await Html.PartialAsync("_PartialFooter")</footer>
 	<script src="~/JavaScript.js" async></script>
 </body>
 </html>
