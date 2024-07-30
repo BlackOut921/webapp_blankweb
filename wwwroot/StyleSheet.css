@@ -135,7 +135,7 @@ footer {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    padding: 1rem 0 0 1rem; /* top right bottom left*/
+    padding: 1rem 0 0 1rem; /* top right bottom left */
 }
 
 .bo-navbar-new {
