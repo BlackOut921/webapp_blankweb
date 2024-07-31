@@ -73,7 +73,7 @@ footer {
 }
 
 /* ----- theme switch ----- */
-.bo-theme-switch-slider-new {
+.bo-theme-switch-slider {
     padding: 0.25rem;
     background-color: white;
     border-radius: 0.5rem;
@@ -89,7 +89,7 @@ footer {
     transition: 0.2s;
 }
 
-.bo-theme-switch-new {
+.bo-theme-switch {
     padding: 0.25rem;
     background-color: lightgrey;
     border-radius: 0.5rem;
@@ -99,32 +99,32 @@ footer {
     transition: 0.2s;
 }
 
-    .bo-theme-switch-new:hover {
+    .bo-theme-switch:hover {
         filter: brightness(95%);
     }
 
-    .bo-theme-switch-new input {
+    .bo-theme-switch input {
         display: none;
     }
 
     /* if input is :checked, change container background-color */
-    .bo-theme-switch-new:has(input:checked) {
+    .bo-theme-switch:has(input:checked) {
         background-color: dimgrey;
     }
 
         /* if input is :checked, select slider */
-        .bo-theme-switch-new:has(input:checked) .bo-theme-switch-slider-new {
+        .bo-theme-switch:has(input:checked) .bo-theme-switch-slider {
             transform: translateX(100%);
             background-color: darkgrey;
         }
 
     /* if input checked, hide moon icon */
-    .bo-theme-switch-new:has(input:not(:checked)) .bi-moon {
+    .bo-theme-switch:has(input:not(:checked)) .bi-moon {
         display: none;
     }
 
     /* if input NOT checked, hide sun icon */
-    .bo-theme-switch-new:has(input:checked) .bi-sun {
+    .bo-theme-switch:has(input:checked) .bi-sun {
         display: none;
     }
 
@@ -138,11 +138,11 @@ footer {
     padding: 1rem 0 0 1rem; /* top right bottom left */
 }
 
-.bo-navbar-new {
+.bo-navbar {
     display: block;
 }
 
-.bo-navbar-btn-new {
+.bo-navbar-btn {
     padding: 1rem 1.5rem;
     height: 100%;
     font-weight: bolder;
@@ -156,17 +156,17 @@ footer {
     transition: 0.2s;
 }
 
-    .bo-navbar-btn-new:hover {
+    .bo-navbar-btn:hover {
         color: var(--c-highlight-2);
     }
 
-.bo-navbar-collapse-new {
+.bo-navbar-collapse {
     overflow: hidden;
     display: block;
     height: 100%;
 }
 
-.bo-navbar-nav-new {
+.bo-navbar-nav {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -195,156 +195,22 @@ footer {
 
 /* md breakpoint */
 @media screen and (width <= 768px) {
-    .bo-navbar-btn-new {
+    .bo-navbar-btn {
         display: block;
     }
 
-    .bo-navbar-collapse-new {
+    .bo-navbar-collapse {
         display: none;
     }
 
-        .bo-navbar-collapse-new.show {
+        .bo-navbar-collapse.show {
             display: block;
         }
 
-    .bo-navbar-nav-new {
+    .bo-navbar-nav {
         flex-direction: column;
     }
 }
-
-/* ----- navbar ----- */
-.bo-nav-container {
-    backdrop-filter: blur(2px);
-    width: 100%;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    transition: var(--root-btn-hover-time);
-    z-index: 1;
-    border-bottom: 1px solid var(--txt-body);
-}
-
-.bo-nav {
-    background-color: var(--c-body-1);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-}
-
-    .bo-nav.show {
-        visibility: visible;
-        height: 100%;
-        opacity: 1;
-    }
-
-.bo-nav-inner {
-    background-color: var(--c-body-3);
-    border-radius: 1rem;
-    width: 50%;
-    min-width: 25%;
-    max-width: 256px;
-    height: 50%;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: bolder;
-}
-
-    .bo-nav-inner ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 100%;
-        height: 100%;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .bo-nav-inner a {
-        color: var(--txt-body);
-        display: block;
-        padding: 1rem;
-        text-decoration: none;
-        transition: var(--root-btn-hover-time);
-    }
-
-        .bo-nav-inner a:hover {
-            background-color: var(--c-highlight-1);
-        }
-
-.bo-nav-btn {
-    background-color: transparent;
-    color: var(--txt-body);
-    padding: 1rem;
-    border: none;
-    font-weight: bolder;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-    .bo-nav-btn:hover {
-        color: var(--c-highlight-1);
-    }
-
-.bo-theme-switch-slider {
-    background-color: white;
-    width: 50%;
-    height: 100%;
-    display: block;
-    padding: 0.5rem;
-    transform: translateX(0);
-    transition: var(--root-theme-time);
-    border-radius: 1rem;
-    text-align: center;
-    vertical-align: central;
-}
-
-.bo-theme-switch {
-    background-color: lightgrey;
-    border: 1px solid darkgrey;
-    border-radius: 1rem;
-    cursor: pointer;
-    padding: 0.25rem;
-    transition: var(--root-theme-time);
-    min-width: 75px;
-    min-height: 25px;
-}
-
-    .bo-theme-switch input {
-        display: none;
-    }
-
-    .bo-theme-switch:has(input:checked) {
-        background-color: var(--c-body-1);
-    }
-
-        .bo-theme-switch:has(input:checked) .bo-theme-switch-slider {
-            transform: translateX(100%);
-            background-color: darkgrey;
-        }
-
-        .bo-theme-switch:has(input:checked) .bi-sun {
-            display: none;
-        }
-
-    .bo-theme-switch:has(input:not(:checked)) .bi-moon {
-        display: none;
-    }
 
 /* global button */
 .bo-btn {

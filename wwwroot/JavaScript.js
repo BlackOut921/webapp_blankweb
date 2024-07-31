@@ -1,5 +1,5 @@
 ﻿//Find theme wwitch
-const _themeSwitch = document.querySelector(".bo-theme-switch-input-new");
+const _themeSwitch = document.querySelector(".bo-theme-switch-input");
 //Save theme storage name
 const _themeStorageName = "bo-theme";
 //Store current theme
@@ -62,9 +62,9 @@ window.onload = () => {
 
     //----- new navbar -----
     //Links
-    const _navbar = document.querySelector(".bo-navbar-collapse-new");
+    const _navbar = document.querySelector(".bo-navbar-collapse");
     //Navbar button
-    const _navbarBtn = document.querySelector(".bo-navbar-btn-new");
+    const _navbarBtn = document.querySelector(".bo-navbar-btn");
     _navbarBtn.addEventListener("click", () => {
         _navbar.classList.toggle("show");
     });

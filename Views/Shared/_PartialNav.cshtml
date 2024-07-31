@@ -4,29 +4,6 @@
 
 <!-- NEW -->
 <div class="bo-nav-header">
-	<label class="bo-theme-switch-new" title="Toggle dark mode">
-		<input type="checkbox" class="bo-theme-switch-input-new" />
-		<span class="bo-theme-switch-slider-new">
-			<i class="bi bi-sun"></i>
-			<i class="bi bi-moon"></i>
-		</span>
-	</label>
-	<nav class="bo-navbar-new">
-		<button type="button" class="bo-navbar-btn-new">
-			MENU <i class="bi bi-list"></i>
-		</button>
-		<div class="bo-navbar-collapse-new">
-			<ul class="bo-navbar-nav-new">
-				<li><a asp-controller="Home" asp-action="Index" class="bo-nav-link">Home</a></li>
-				<li><a asp-controller="Home" asp-action="About" class="bo-nav-link">About</a></li>
-				<li><a asp-controller="Home" asp-action="Contact" class="bo-nav-link">Contact</a></li>
-			</ul>
-		</div>
-	</nav>
-</div>
-
-<!-- OLD -->
-<!--<div class="bo-nav-container bo-text-dark">
 	<label class="bo-theme-switch" title="Toggle dark mode">
 		<input type="checkbox" class="bo-theme-switch-input" />
 		<span class="bo-theme-switch-slider">
@@ -34,16 +11,16 @@
 			<i class="bi bi-moon"></i>
 		</span>
 	</label>
-	<button type="button" class="bo-nav-btn">
-		MENU <i class="bi bi-list"></i>
-	</button>
+	<nav class="bo-navbar">
+		<button type="button" class="bo-navbar-btn">
+			MENU <i class="bi bi-list"></i>
+		</button>
+		<div class="bo-navbar-collapse">
+			<ul class="bo-navbar-nav">
+				<li><a asp-controller="Home" asp-action="Index" class="bo-nav-link">Home</a></li>
+				<li><a asp-controller="Home" asp-action="About" class="bo-nav-link">About</a></li>
+				<li><a asp-controller="Home" asp-action="Contact" class="bo-nav-link">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
 </div>
-<nav class="bo-nav">
-	<div class="bo-nav-inner">
-		<ul>
-			<li><a asp-controller="Home" asp-action="Index">Home</a></li>
-			<li><a asp-controller="Home" asp-action="About">About</a></li>
-			<li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-		</ul>
-	</div>
-</nav>-->
