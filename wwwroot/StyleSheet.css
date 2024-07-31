@@ -212,23 +212,6 @@ footer {
     }
 }
 
-/* global button */
-.bo-btn {
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: central;
-    transition: 0.25s;
-}
-
-.bo-btn-highlight-1 {
-    background-color: var(--c-highlight-1);
-}
-
-    .bo-btn-highlight-1:hover {
-        background-color: var(--c-highlight-2);
-    }
-
 /* ----- custom tiles ----- */
 .bo-tile-content {
 }
@@ -341,6 +324,24 @@ footer {
         opacity: 1;
     }
 
+/* button */
+.bo-btn {
+    border: none;
+    border-radius: var(--root-value-1);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: central;
+    transition: 0.25s;
+}
+
+.bo-btn-highlight-1 {
+    background-color: var(--c-highlight-1);
+}
+
+    .bo-btn-highlight-1:hover {
+        background-color: var(--c-highlight-2);
+    }
+
 /* ----- containers ----- */
 .bo-container,
 .bo-container-fluid {
@@ -403,6 +404,7 @@ footer {
 .bo-text-body { color: var(--txt-body); }
 .bo-text-light { color: var(--root-c-light); }
 .bo-text-dark { color: var(--root-c-dark); }
+.bo-text-secondary { color: rgb(125, 125, 125); }
 .bo-bg-body-1 { background-color: var(--c-body-1); }
 .bo-bg-body-2 { background-color: var(--c-body-2); }
 .bo-bg-body-3 { background-color: var(--c-body-3); }
